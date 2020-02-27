@@ -375,7 +375,20 @@ ModelImporter:
   - first:
       95: 9500000
     second: //RootNode
-  externalObjects: {}
+  - first:
+      74: 1827226128182048838
+    second: Take 001
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: None__vegetation_toon01_png
+    second: {fileID: 2100000, guid: 77bcae9a59477eb4684c8f854190909f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: None__vegetation_toon02_png
+    second: {fileID: 2100000, guid: cc9cd8956b8dbba449a294ac00a08f56, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
