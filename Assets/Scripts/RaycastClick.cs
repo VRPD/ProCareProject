@@ -23,8 +23,8 @@ public class RaycastClick : MonoBehaviour
 		// Add listener to hands
 		_player = GetComponent<Player>();
 
-		_player.leftHand.grabGripAction.AddOnChangeListener(OnHandTrigger, SteamVR_Input_Sources.LeftHand);
-		_player.rightHand.grabGripAction.AddOnChangeListener(OnHandTrigger, SteamVR_Input_Sources.RightHand);
+		_player.leftHand.grabPinchAction.AddOnChangeListener(OnHandTrigger, SteamVR_Input_Sources.LeftHand);
+		_player.rightHand.grabPinchAction.AddOnChangeListener(OnHandTrigger, SteamVR_Input_Sources.RightHand);
 	}
 
 	private void OnHandTrigger(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource, bool newState)
