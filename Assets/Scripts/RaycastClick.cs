@@ -23,8 +23,8 @@ public class RaycastClick : MonoBehaviour
 		// Add listener to hands
 		_player = GetComponent<Player>();
 
-		_player.leftHand.grabGripAction.AddOnChangeListener(OnHandTrigger);
-		_player.rightHand.grabGripAction.AddOnChangeListener(OnHandTrigger);
+		_player.leftHand.grabGripAction.AddOnChangeListener(OnHandTrigger, SteamVR_Input_Sources.LeftHand);
+		_player.rightHand.grabGripAction.AddOnChangeListener(OnHandTrigger, SteamVR_Input_Sources.RightHand);
 	}
 
 	private void OnHandTrigger(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource, bool newState)
@@ -40,7 +40,8 @@ public class RaycastClick : MonoBehaviour
 		RaycastHit rayHit;
 		if (Physics.Raycast(new Ray(_origin.transform.position, _origin.transform.forward), out rayHit, _maxRayDistance))
 		{
-			Button button = rayHit.collider.gameObject.GetComponent<Button>();
+			Debug.Log(rayHit.collider.gameObject.name);
+			Button button = rayHit.collider.gameObject.transform.parent.GetComponent<Button>();
 			//Check if the target hit has a (UI) button, if so we invoke the OnClick event, essentially pushing the button
 			if (button)
 				button.onClick.Invoke();
@@ -51,8 +52,11 @@ public class RaycastClick : MonoBehaviour
     {
 		if (showDebug)
 		{
-			Debug.DrawRay(_origin.transform.position, _origin.transform.forward, Color.blue);
-			Debug.DrawRay(_origin.transform.position+_origin.transform.forward, _origin.transform.forward*3f, Color.red);
+			Debug.DrawRay(_player.leftHand.transform.position, _player.leftHand.transform.forward, Color.blue);
+			Debug.DrawRay(_player.leftHand.transform.position + _player.leftHand.transform.forward, _player.leftHand.transform.forward * 3f, Color.red);
+
+			Debug.DrawRay(_player.rightHand.transform.position, _player.rightHand.transform.forward, Color.blue);
+			Debug.DrawRay(_player.rightHand.transform.position + _player.rightHand.transform.forward, _player.rightHand.transform.forward * 3f, Color.red);
 		}
     }
 }
