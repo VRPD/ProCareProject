@@ -3330,6 +3330,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1288398510}
     m_Modifications:
+    - target: {fileID: 269652649007375191, guid: 0e4adf2c656c150448aba2a7c48975a9,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1977824287676699868, guid: 0e4adf2c656c150448aba2a7c48975a9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3389,6 +3394,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Space Dome w Tunnel
+      objectReference: {fileID: 0}
+    - target: {fileID: 6190896847344351757, guid: 0e4adf2c656c150448aba2a7c48975a9,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fb78414655452d1439e3fa3e0bfeda87, type: 2}
+    - target: {fileID: 6190896847344351757, guid: 0e4adf2c656c150448aba2a7c48975a9,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6190896847344351757, guid: 0e4adf2c656c150448aba2a7c48975a9,
+        type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e4adf2c656c150448aba2a7c48975a9, type: 3}
@@ -3687,10 +3707,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000,
         type: 0}
+    - target: {fileID: 2437435343245001923, guid: 4d52708ba39345e44967ddc53a91b263,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3d7ed11b05556a847815551b33359362, type: 2}
     - target: {fileID: 6362273621581732576, guid: 4d52708ba39345e44967ddc53a91b263,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: ae2efeea9c901af48b6bb19d9981d5d2, type: 2}
+    - target: {fileID: 8377256172297204822, guid: 4d52708ba39345e44967ddc53a91b263,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.776
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d52708ba39345e44967ddc53a91b263, type: 3}
