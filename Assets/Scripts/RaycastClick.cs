@@ -10,6 +10,8 @@ using static Valve.VR.SteamVR_Action_Boolean;
 [RequireComponent(typeof(Player))]
 public class RaycastClick : MonoBehaviour
 {
+	static public string HOVER_TAG = "ShowLaserCursor";
+
 	private Player _player;
 	private Transform _origin;
 
@@ -29,7 +31,6 @@ public class RaycastClick : MonoBehaviour
 
 	private void OnHandTrigger(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource, bool newState)
 	{
-
 		// Get the appropiate origin depending on the input source
 		if (fromSource == SteamVR_Input_Sources.LeftHand)
 			_origin = _player.leftHand.transform;
@@ -40,8 +41,8 @@ public class RaycastClick : MonoBehaviour
 		RaycastHit rayHit;
 		if (Physics.Raycast(new Ray(_origin.transform.position, _origin.transform.forward), out rayHit, _maxRayDistance))
 		{
-			Debug.Log(rayHit.collider.gameObject.name);
 			Button button = rayHit.collider.gameObject.transform.parent.GetComponent<Button>();
+			if (!button) button = rayHit.collider.gameObject.transform.GetComponent<Button>();
 			//Check if the target hit has a (UI) button, if so we invoke the OnClick event, essentially pushing the button
 			if (button)
 				button.onClick.Invoke();
