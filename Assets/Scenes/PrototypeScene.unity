@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 258348860}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.072091624, g: 0.1095534, b: 0.18844795, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -97,8 +97,9 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_LightingDataAsset: {fileID: 112000000, guid: 6dcf687c169b5934eb5fc8738ac27fc3,
+    type: 2}
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -230,11 +231,11 @@ Transform:
   - {fileID: 196116815}
   - {fileID: 1706494071}
   - {fileID: 604149673}
+  - {fileID: 1156732854}
   - {fileID: 244826021}
   - {fileID: 749579064}
   - {fileID: 1692137465}
   - {fileID: 1503817867}
-  - {fileID: 1156732854}
   - {fileID: 528886063}
   - {fileID: 2076928224}
   - {fileID: 1762678312}
@@ -3966,7 +3967,7 @@ Transform:
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children: []
   m_Father: {fileID: 19353708}
-  m_RootOrder: 11
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &1156732855
 MeshCollider:
