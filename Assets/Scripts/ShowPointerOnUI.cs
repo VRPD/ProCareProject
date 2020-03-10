@@ -26,17 +26,21 @@ public class ShowPointerOnUI : MonoBehaviour
 	// Update is called once per frame
 	private void Update()
 	{
-		// Maaaybe add in a refresh rate to reduce the amount of calls? Since it's a simple toggle I believe the latency wouldn't be as noticable.
+		_pointers[0].pointer.SetActive(false);
+		_pointers[1].pointer.SetActive(false);
 
+		// Maaaybe add in a refresh rate to reduce the amount of calls? Since it's a simple toggle I believe the latency wouldn't be as noticable.
+		Debug.Log("wtf");
 		RaycastHit rayHit;
 		// Left Hand
 		if (Physics.Raycast(new Ray(_player.leftHand.transform.position, _player.leftHand.transform.forward), out rayHit, _maxRayDistance))
 		{
 			// If we hit an UI element (would like to avoid comparing tags due to the memory leakage and room for error)
 			if (rayHit.collider.tag == "ShowLaserCursor")
-				_pointers[0].enabled = true;
+				_pointers[0].pointer.SetActive(true);
 			else
-				_pointers[0].enabled = false;
+				_pointers[0].pointer.SetActive(false);
+				
 		}
 
 		// Right Hand
@@ -45,9 +49,9 @@ public class ShowPointerOnUI : MonoBehaviour
 		{
 			// If we hit an UI element (would like to avoid comparing tags due to the memory leakage and room for error)
 			if (rayHit.collider.tag == "ShowLaserCursor")
-				_pointers[1].enabled = true;
+				_pointers[1].pointer.SetActive(true);
 			else
-				_pointers[1].enabled = false;
+				_pointers[1].pointer.SetActive(false);
 		}
 	}
 }
