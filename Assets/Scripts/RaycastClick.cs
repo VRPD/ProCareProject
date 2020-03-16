@@ -31,6 +31,9 @@ public class RaycastClick : MonoBehaviour
 
 	private void OnHandTrigger(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource, bool newState)
 	{
+		// Ignore the 'Up' call of a button press
+		if (!newState) return;
+
 		// Get the appropiate origin depending on the input source
 		if (fromSource == SteamVR_Input_Sources.LeftHand)
 			_origin = _player.leftHand.transform;
