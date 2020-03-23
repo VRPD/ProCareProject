@@ -16,7 +16,7 @@ public class ObjectFloat : MonoBehaviour
 	private float _dragAddition = 2;
 
 	private Rigidbody _rigidBody;
-	private bool aaah = false;
+	private bool _ignoreMode = false;
 
     // Start is called before the first frame update
     void Awake()
@@ -24,19 +24,15 @@ public class ObjectFloat : MonoBehaviour
 		_rigidBody = GetComponent<Rigidbody>();
 	}
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (debugActivate && !aaah)
-		{
-			aaah = true;
-			TriggerFloat();
-		}
-    }
-
+	public void SetIgnoreMode(bool mode)
+	{
+		_ignoreMode = mode;
+	}
 
 	public void TriggerFloat()
 	{
+		if (_ignoreMode) return;
+
 		_rigidBody.WakeUp();
 		_rigidBody.useGravity = false;
 		_rigidBody.AddForce(Vector3.up * _upwardsForce, ForceMode.Impulse);
@@ -47,6 +43,7 @@ public class ObjectFloat : MonoBehaviour
 
 	public void StopFloat()
 	{
+		if (_ignoreMode) return;
 
 		_rigidBody.WakeUp();
 		_rigidBody.useGravity = true;

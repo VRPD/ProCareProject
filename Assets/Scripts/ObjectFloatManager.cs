@@ -8,15 +8,17 @@ public class ObjectFloatManager : MonoBehaviour
 	[SerializeField]
 	private List<ObjectFloat> _affectedObjects;
 
-	private bool isFloating;
+	private bool _isFloating;
 
 	public UnityEvent OnObjectsFloatEvent;
 	public UnityEvent OnObjectsStopFloatEvent;
 
 	public void StartObjectsFloat()
 	{
+		if (_isFloating) return;
+
 		_affectedObjects.ForEach(x => x.TriggerFloat());
-		isFloating = true;
+		_isFloating = true;
 
 		if (OnObjectsFloatEvent != null)
 			OnObjectsFloatEvent.Invoke();
@@ -24,8 +26,10 @@ public class ObjectFloatManager : MonoBehaviour
 
 	public void EndObjectsFloat()
 	{
+		if (!_isFloating) return;
+
 		_affectedObjects.ForEach(x => x.StopFloat());
-		isFloating = false;
+		_isFloating = false;
 
 		if (OnObjectsStopFloatEvent != null)
 			OnObjectsStopFloatEvent.Invoke();
@@ -33,11 +37,14 @@ public class ObjectFloatManager : MonoBehaviour
 
 	public void ToggleFloat()
 	{
-		isFloating = !isFloating;
+		_isFloating = !_isFloating;
 
-		if (isFloating) StartObjectsFloat();
+		if (_isFloating) StartObjectsFloat();
 		else			EndObjectsFloat();
 	}
 
-
+	public bool IsCurrentlyFloating()
+	{
+		return _isFloating;
+	}
 }

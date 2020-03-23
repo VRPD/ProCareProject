@@ -22,15 +22,18 @@ public class RaycastClick : MonoBehaviour
 	
 	private void Awake()
     {
-		// Add listener to hands
 		_player = GetComponent<Player>();
 
+		// Add listener to hands, grabPinch is the main trigger (for HTC Vive)
 		_player.leftHand.grabPinchAction.AddOnChangeListener(OnHandTrigger, SteamVR_Input_Sources.LeftHand);
 		_player.rightHand.grabPinchAction.AddOnChangeListener(OnHandTrigger, SteamVR_Input_Sources.RightHand);
 	}
 
 	private void OnHandTrigger(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource, bool newState)
 	{
+		// Ignore the 'Up' call of a button press. Not including this makes both pressing & releasing the trigger activate it
+		if (!newState) return;
+
 		// Get the appropiate origin depending on the input source
 		if (fromSource == SteamVR_Input_Sources.LeftHand)
 			_origin = _player.leftHand.transform;
@@ -39,14 +42,18 @@ public class RaycastClick : MonoBehaviour
 
 		// Use a simple raycast to find an object
 		RaycastHit rayHit;
+		// Using transform.forward to simply look in the direction the object is looking at 
 		if (Physics.Raycast(new Ray(_origin.transform.position, _origin.transform.forward), out rayHit, _maxRayDistance))
 		{
+			// In some cases the actual collider is a child of the object with the Button script, so if the 1st GetComponent doesn't 
+			// grab it, we'll try to get it directly.
 			Button button = rayHit.collider.gameObject.transform.parent.GetComponent<Button>();
 			if (!button) button = rayHit.collider.gameObject.transform.GetComponent<Button>();
+
 			//Check if the target hit has a (UI) button, if so we invoke the OnClick event, essentially pushing the button
 			if (button)
 				button.onClick.Invoke();
-		}
+		} 
 	}
 
     private void Update()
