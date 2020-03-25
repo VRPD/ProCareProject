@@ -20,7 +20,6 @@ using UnityEngine;
         {
             foreach(IContainAction action in triggerCustomAction)
             {
-                Debug.Log("Executing actions");
                 action.CustomAction();
             }
         }

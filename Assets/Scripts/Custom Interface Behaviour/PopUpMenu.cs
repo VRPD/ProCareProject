@@ -16,7 +16,6 @@ public class PopUpMenu : MonoBehaviour, IContainAction
 
   public void CustomAction()
     {
-        Debug.Log("Menu popped up");
         if (!isOpen)
         {
             foreach (GameObject obj in menuObjects)
