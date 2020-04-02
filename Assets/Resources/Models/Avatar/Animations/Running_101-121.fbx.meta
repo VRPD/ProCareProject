@@ -1,11 +1,17 @@
 fileFormatVersion: 2
-guid: 9b7750265f420424fb7749a591aa996a
+guid: 058c89802705f4f4aae54bcbb74ffc65
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable:
   - first:
       74: 1827226128182048838
-    second: Avatar-Walking
+    second: Running
+  - first:
+      74: -3143607352010309131
+    second: Avatar-Sprinting
+  - first:
+      74: -4354861442476799344
+    second: Avatar-Running
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -35,11 +41,40 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Avatar-Walking
+      name: Avatar-Running
       takeName: Take 001
       internalID: 0
-      firstFrame: 0
-      lastFrame: 19
+      firstFrame: 101
+      lastFrame: 121
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Avatar-Sprinting
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 222
+      lastFrame: 236
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -521,18 +556,18 @@ ModelImporter:
         length: 0
         modified: 0
     skeleton:
-    - name: Jogging_0-19(Clone)
+    - name: Running_101-121(Clone)
       parentName: 
       position: {x: 0, y: 0, z: 0}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: Group1
-      parentName: Jogging_0-19(Clone)
+      parentName: Running_101-121(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: mixamorig:Hips
-      parentName: Jogging_0-19(Clone)
+      parentName: Running_101-121(Clone)
       position: {x: -0.00008769989, y: 0.119480565, z: 0.0015270954}
       rotation: {x: 0.0000000014551917, y: 7.275959e-10, z: 0.0000000011937119, w: 1}
       scale: {x: 0.99999994, y: 1, z: 1}
