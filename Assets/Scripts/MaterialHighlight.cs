@@ -11,6 +11,8 @@ public class MaterialHighlight : MonoBehaviour
 	private string _highlightStrengthPropertyID = "Vector1_B1CE3997";
 	[SerializeField]
 	private string _highlightMapPropertyID = "Texture2D_AA866AD1";
+	[SerializeField]
+	private Texture2D[] _highlightTextures;
 
 	[Header("General")]
 	[SerializeField]
@@ -28,6 +30,16 @@ public class MaterialHighlight : MonoBehaviour
 
 
 		_material.SetFloat(_highlightStrengthPropertyID, 0);
+	}
+
+	public void SetHighlightTexture(int id)
+	{
+		_material.SetTexture(_highlightMapPropertyID, _highlightTextures[id]);
+	}
+
+	public void SetHighlightTexture(Texture2D texture)
+	{
+		_material.SetTexture(_highlightMapPropertyID, texture);
 	}
 
 	public void StartHighlight(float duration)
