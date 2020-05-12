@@ -15,11 +15,16 @@ namespace Valve.VR.InteractionSystem
 	[RequireComponent( typeof( Interactable ) )]
 	public class UIElementExpanded : MonoBehaviour
 	{
+		[Header("Variables")]
+		public bool triggerExitOnClick = true;
+
+		[Header("Events")]
 		public CustomEvents.UnityEventHand onHandClick;
 		public CustomEvents.UnityEventHand onHandHover;
 		public CustomEvents.UnityEventHand onHandExit;
 
 		protected Hand currentHand;
+
 
 		//-------------------------------------------------
 		protected virtual void Awake()
@@ -67,6 +72,9 @@ namespace Valve.VR.InteractionSystem
 		protected virtual void OnButtonClick()
 		{
 			onHandClick.Invoke(currentHand);
+
+			if (triggerExitOnClick)
+				onHandExit.Invoke(currentHand);
 		}
 
 		protected virtual void OnButtonHover()

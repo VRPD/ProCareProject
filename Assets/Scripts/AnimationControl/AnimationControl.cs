@@ -17,26 +17,37 @@ public class AnimationControl : MonoBehaviour
 	[SerializeField]
 	private BlendTree _blendTree;
 
+	[Header("No")]
+	[SerializeField]
+	private VolumeAdjustment _speedAdjustment;
+	[SerializeField]
+	private VolumeAdjustment _gravityAdjustment;
+
 	// Start is called before the first frame update
-	void Start()
+	void Awake()
     {
 		//_animator.Play("stateName");
-		_speedSlider.onValueChanged.AddListener(SpeedChanged);
+		
+		//if (_speedSlider)
+		//	_speedSlider.onValueChanged.AddListener(SpeedChanged);
+		//else
+		_speedAdjustment.OnVolumeChange.AddListener(SpeedChanged);
+
 		//_gravitySlider.onValueChanged.AddListener(GravityChanged);
 		//_blendTree = _animator.runtimeAnimatorController.
-    }
+	}
 
-	private void GravityChanged(float arg0)
+	private void GravityChanged(float value)
 	{
 		for (int i = 0; i < _blendTree.children.Length; i++)
 		{
-			_blendTree.children[i].timeScale = arg0;
+			_blendTree.children[i].timeScale = value;
 		}
 	}
 
-	private void SpeedChanged(float arg0)
+	private void SpeedChanged(float value)
 	{
-		_animator.SetFloat("Running Speed", arg0);
+		_animator.SetFloat("Running Speed", value);
 	}
 
 	// Update is called once per frame
