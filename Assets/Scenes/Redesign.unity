@@ -1005,6 +1005,47 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 197794468}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &209185669 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7035344421195313306, guid: c1128d77480c7074b916a9e900632274,
+    type: 3}
+  m_PrefabInstance: {fileID: 2080097220}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &209185670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 209185669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 200ab6801da1e0f4e83571ea71f623ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _narrator: {fileID: 480259780}
+  NewAction:
+    actionPath: /actions/default/in/AdvanceNarrative
+    needsReinit: 0
+  handType: 1
+--- !u!114 &209185671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 209185669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4bd2a2b6ce35b7498064816b2cad249, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameObjects:
+  - {fileID: 1230125054}
+  toggleAction:
+    actionPath: /actions/default/in/HideShowAvatar
+    needsReinit: 0
+  handType: 1
 --- !u!4 &209562130 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: d1edb567dd56f994cbb75a74e047b18a,
@@ -9331,10 +9372,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 11445746, guid: 7a135b1a2cb9c8f488d4dd00c55ab283, type: 3}
-      propertyPath: traceLayerMask.m_Bits
-      value: 4294967295
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a135b1a2cb9c8f488d4dd00c55ab283, type: 3}
 --- !u!1001 &1225576448
@@ -10868,26 +10905,26 @@ MonoBehaviour:
   currentSOFAFile: 0
   materialPreset: 0
   materialValue:
-    LowFreqAbsorption: 0
-    MidFreqAbsorption: 0
-    HighFreqAbsorption: 0
-    Scattering: 0
-    LowFreqTransmission: 0
-    MidFreqTransmission: 0
-    HighFreqTransmission: 0
+    LowFreqAbsorption: 0.1
+    MidFreqAbsorption: 0.2
+    HighFreqAbsorption: 0.3
+    Scattering: 0.05
+    LowFreqTransmission: 0.1
+    MidFreqTransmission: 0.05
+    HighFreqTransmission: 0.03
   simulationPreset: 0
   simulationValue:
     OcclusionSamples: 128
-    RealtimeRays: 0
-    RealtimeSecondaryRays: 0
-    RealtimeBounces: 0
+    RealtimeRays: 4096
+    RealtimeSecondaryRays: 1024
+    RealtimeBounces: 2
     RealtimeThreadsPercentage: 5
-    BakeRays: 0
-    BakeSecondaryRays: 0
-    BakeBounces: 0
+    BakeRays: 16384
+    BakeSecondaryRays: 4096
+    BakeBounces: 32
     BakeThreadsPercentage: 5
-    Duration: 0
-    AmbisonicsOrder: 0
+    Duration: 1
+    AmbisonicsOrder: 1
     MaxSources: 32
     IrradianceMinDistance: 1
   updateComponents: 1
@@ -12334,7 +12371,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1542329785}
   m_LocalRotation: {x: 0, y: 0.0026179885, z: 0, w: 0.9999966}
-  m_LocalPosition: {x: -0.023469819, y: 0.05, z: 0.020408}
+  m_LocalPosition: {x: -0.023469819, y: 0.08, z: 0.020408}
   m_LocalScale: {x: 2.2445257, y: 0.005611315, z: 2.2445257}
   m_Children: []
   m_Father: {fileID: 1288398510}
@@ -16257,6 +16294,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Avatar_UVUnwrapped
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: a9a8ae834e7d6bf4b803e569e5d73ebf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 200705046819879391, guid: a9a8ae834e7d6bf4b803e569e5d73ebf,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -16460,7 +16502,7 @@ PrefabInstance:
     - target: {fileID: 7035344421194825954, guid: c1128d77480c7074b916a9e900632274,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.72
+      value: -6.807
       objectReference: {fileID: 0}
     - target: {fileID: 7035344421194825954, guid: c1128d77480c7074b916a9e900632274,
         type: 3}
@@ -16470,7 +16512,7 @@ PrefabInstance:
     - target: {fileID: 7035344421194825954, guid: c1128d77480c7074b916a9e900632274,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 1.583
       objectReference: {fileID: 0}
     - target: {fileID: 7035344421194825954, guid: c1128d77480c7074b916a9e900632274,
         type: 3}
