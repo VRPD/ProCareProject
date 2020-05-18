@@ -5801,7 +5801,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -5845,7 +5845,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -5898,8 +5898,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _source: {fileID: 5628629506069110934}
-  _soundOnHover: {fileID: 8300000, guid: c9539d5b7e5775a4f9ff5693fa9d4639, type: 3}
+  _soundOnHover: {fileID: 8300000, guid: 6b2adf5f9ea6bfd41af304ab4e43ee01, type: 3}
   _soundOnClick: {fileID: 8300000, guid: 409230843eb49f44e8334217cd0b3f92, type: 3}
+  _pitchVariance: 0.036
 --- !u!1 &3818129960063570205
 GameObject:
   m_ObjectHideFlags: 0
