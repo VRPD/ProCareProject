@@ -26,7 +26,7 @@ public class PlayNarration : MonoBehaviour
     //Checks which of the clips has been selected, the clip number is defined in the object the player is interacting with.
     public void PlayNextClip(int clipNo)
     {
-		/*Debug.Log(!narratePlayer.isPlaying);
+		Debug.Log(!narratePlayer.isPlaying);
         if (!narratePlayer.isPlaying)
         {
 			Debug.Log(!narratePlayer.isPlaying);
@@ -41,6 +41,6 @@ public class PlayNarration : MonoBehaviour
             {
                 Console.WriteLine("Clip already played.");
             }
-        }*/        
+        }       
     }
 }
