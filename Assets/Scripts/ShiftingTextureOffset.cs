@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[ExecuteInEditMode]
 public class ShiftingTextureOffset : MonoBehaviour
 {
 	[SerializeField]
@@ -11,9 +12,16 @@ public class ShiftingTextureOffset : MonoBehaviour
 
 	private string _vectorID = "Vector2_8718CC1E";
 
+
+	private void Awake()
+	{
+		_material.SetVector(_vectorID, new Vector4(0, 0, 0, 0));
+	}
+
 	// Update is called once per frame
 	void Update()
     {
-		_material.SetVector(_vectorID, new Vector4(0, Time.time * _speed, 0, 0));
+		if (Application.isPlaying)
+			_material.SetVector(_vectorID, new Vector4(0, Time.time * _speed, 0, 0));
     }
 }
