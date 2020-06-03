@@ -39,6 +39,18 @@ public class AlterGMachine : MonoBehaviour
 		CheckForEvents();
 	}
 
+	public void ChangeWeight(float increment)
+	{
+		_weightPercentage = (int)(increment * 100);
+
+		if (_weightPercentage < 20)
+			_weightPercentage = 20;
+		if (_weightPercentage > 100)
+			_weightPercentage = 100;
+
+		CheckForEvents();
+	}
+
 	private void CheckForEvents()
 	{
 		if (_weightPercentage == 20)
