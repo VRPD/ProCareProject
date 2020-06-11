@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Checks for IContainAction interfaces to easily call upon multiple methods at once.
+/// </summary>
 
     public class ActionCaller : MonoBehaviour
     {
