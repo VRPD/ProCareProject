@@ -5,7 +5,7 @@
       "app_key": "application.generated.unity.procareprototype.exe",
       "launch_type": "url",
       "url": "steam://launch/",
-      "action_manifest_path": "D:\\Projects\\ProCareProject2\\ProCareProject\\Assets\\StreamingAssets\\SteamVR\\actions.json",
+      "action_manifest_path": "D:\\Projects\\ProCareProject\\Assets\\StreamingAssets\\SteamVR\\actions.json",
       "strings": {
         "en_us": {
           "name": "ProCarePrototype [Testing]"
