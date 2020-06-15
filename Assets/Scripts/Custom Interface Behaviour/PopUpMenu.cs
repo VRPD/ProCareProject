@@ -2,9 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-/// <summary>
-/// PopUpMenu called using the IContainAction interface. Activates and Deactivates assigned objects.
-/// </summary>
 public class PopUpMenu : MonoBehaviour, IContainAction
 {
     public GameObject[] menuObjects;
