@@ -430,6 +430,11 @@ PrefabInstance:
       propertyPath: hapticAction.needsReinit
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7035344421188115016, guid: c1128d77480c7074b916a9e900632274,
+        type: 3}
+      propertyPath: autoSetWithControllerRangeOfMotion
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7035344421188215398, guid: c1128d77480c7074b916a9e900632274,
         type: 3}
       propertyPath: hapticAction.actionPath
@@ -439,6 +444,11 @@ PrefabInstance:
         type: 3}
       propertyPath: hapticAction.needsReinit
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7035344421188215398, guid: c1128d77480c7074b916a9e900632274,
+        type: 3}
+      propertyPath: fingerJointHover
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7035344421194825954, guid: c1128d77480c7074b916a9e900632274,
         type: 3}
@@ -590,7 +600,7 @@ Skybox:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 672593057}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CustomSkybox: {fileID: 0}
 --- !u!114 &793779748 stripped
 MonoBehaviour:
