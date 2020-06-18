@@ -11,7 +11,7 @@ public class TriggerAudioPlayer : MonoBehaviour
 
     private void Start()
     {
-        audioManager = GetComponentInParent<PlayNarration>();
+        //audioManager = GetComponentInParent<PlayNarration>();
     }
 
     private void OnTriggerEnter(Collider other)
