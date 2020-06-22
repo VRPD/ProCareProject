@@ -36,7 +36,7 @@ public class TeleportOrb : MonoBehaviour
 	{
 		startPosition = transform.position;
 		_throwable.onDetachFromHand.AddListener(OnDetach);
-		//_throwable.onPickUp.AddListener(OnPickup);
+		_throwable.onPickUp.AddListener(OnPickup);
 		_rigidbody.constraints = RigidbodyConstraints.FreezePosition;
 
 		_previewText.text = "Teleport to \n " + _sceneNameToJumpTo;
@@ -47,6 +47,11 @@ public class TeleportOrb : MonoBehaviour
 		lastPosition = transform.position;
 		_rigidbody.constraints = RigidbodyConstraints.None;
 		Invoke("CheckIfPortal", 0.1f);
+	}
+
+	private void OnPickup()
+	{
+		startPosition = transform.position;
 	}
 
 	public void CheckIfPortal()
@@ -63,6 +68,7 @@ public class TeleportOrb : MonoBehaviour
 			_throwable.enabled = true;
 			_interactable.enabled = true;
 			_rigidbody.constraints = RigidbodyConstraints.FreezePosition;
+			_rigidbody.angularVelocity = Vector3.zero;
 		}
 	}
 

@@ -7052,6 +7052,12 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 0e416e9e19dff714fb38047236ab3152, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f20a15ee7150fd647af421022dde4d44, type: 3}
+--- !u!1 &598114711 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 408837046, guid: c1128d77480c7074b916a9e900632274,
+    type: 3}
+  m_PrefabInstance: {fileID: 2080097220}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &613411650 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400012, guid: dceeca3e930a413458913fd2f889e527,
@@ -19362,6 +19368,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 408837046, guid: c1128d77480c7074b916a9e900632274, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1789517197083376461, guid: c1128d77480c7074b916a9e900632274,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -19617,12 +19627,6 @@ PrefabInstance:
 --- !u!20 &2080097221 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 7035344421193280504, guid: c1128d77480c7074b916a9e900632274,
-    type: 3}
-  m_PrefabInstance: {fileID: 2080097220}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &2080097222 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1623296342, guid: c1128d77480c7074b916a9e900632274,
     type: 3}
   m_PrefabInstance: {fileID: 2080097220}
   m_PrefabAsset: {fileID: 0}
@@ -20022,7 +20026,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _fadeObject
       value: 
-      objectReference: {fileID: 2080097222}
+      objectReference: {fileID: 598114711}
     - target: {fileID: 6078310768420546692, guid: a1f9d36395196cc4a800748a9c67b20c,
         type: 3}
       propertyPath: _sceneNameToJumpTo
