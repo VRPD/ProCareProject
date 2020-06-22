@@ -84,7 +84,8 @@ public class TeleportOrb : MonoBehaviour
 
 	public void LoadNewLevel()
 	{
-		SceneManager.LoadScene(_sceneNameToJumpTo);
+		Destroy(GameObject.Find("Player (ProCare Edits)"));
+		SceneManager.LoadScene(_sceneNameToJumpTo, LoadSceneMode.Single);
 	}
 
 }
