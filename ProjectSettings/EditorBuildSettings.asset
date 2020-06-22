@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Redesign.unity
     guid: aa3ba073d794d2a49a2a5420db29be9c
+  - enabled: 1
+    path: Assets/Scenes/Biodex.unity
+    guid: be84102fa740e5b4a8ab89fb5894bd3e
   m_configObjects: {}
