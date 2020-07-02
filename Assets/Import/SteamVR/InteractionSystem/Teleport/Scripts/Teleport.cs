@@ -14,8 +14,9 @@ namespace Valve.VR.InteractionSystem
 	public class Teleport : MonoBehaviour
     {
         public SteamVR_Action_Boolean teleportAction = SteamVR_Input.GetAction<SteamVR_Action_Boolean>("Teleport");
+		public SteamVR_Action_Boolean grabPinchAction = SteamVR_Input.GetAction<SteamVR_Action_Boolean>("GrabPinch");
 
-        public LayerMask traceLayerMask;
+		public LayerMask traceLayerMask;
 		public LayerMask floorFixupTraceLayerMask;
 		public float floorFixupMaximumTraceDistance = 1.0f;
 		public Material areaVisibleMaterial;
@@ -962,6 +963,9 @@ namespace Valve.VR.InteractionSystem
                 ControllerButtonHints.HideTextHint(player.leftHand, teleportAction);
                 ControllerButtonHints.HideTextHint(player.rightHand, teleportAction);
 
+				ControllerButtonHints.HideTextHint(player.leftHand, grabPinchAction);
+				ControllerButtonHints.HideTextHint(player.rightHand, grabPinchAction);
+
 				StopCoroutine( hintCoroutine );
 				hintCoroutine = null;
 			}
@@ -990,6 +994,7 @@ namespace Valve.VR.InteractionSystem
 						if ( !isShowingHint )
 						{
 							ControllerButtonHints.ShowTextHint( hand, teleportAction, "Teleport" );
+							ControllerButtonHints.ShowTextHint(hand, grabPinchAction, "Interact");
 							prevBreakTime = Time.time;
 							prevHapticPulseTime = Time.time;
 						}
@@ -1005,6 +1010,7 @@ namespace Valve.VR.InteractionSystem
 					else if ( !showHint && isShowingHint )
 					{
 						ControllerButtonHints.HideTextHint( hand, teleportAction);
+						ControllerButtonHints.HideTextHint(hand, grabPinchAction);
 					}
 				}
 
